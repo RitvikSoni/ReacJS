@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './components/Nav_Bar';
 import Home_Carousel from "./components/Home_Carousel";
 import ImgCard from "./components/ImgCard";
+import data from "./components/data";
 
 
 function App() {
@@ -12,9 +13,12 @@ function App() {
     <NavBar/>
      <Home_Carousel/>
     <div className="image">
-       <ImgCard/>
-     <ImgCard/>
-     <ImgCard/>
+      {
+        data.map((item)=>{
+       return <ImgCard title={item.title} imgUrl={item.imgUrl} desc={item.desc}/>
+        })
+      }
+       
     </div>
   </div>
   
